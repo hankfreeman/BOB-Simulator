@@ -885,8 +885,8 @@ def main():
             initial_policies = st.number_input(
                 f"Initial Policies per Week",
                 min_value=0,
-                value=10,
-                step=10,
+                value=1,
+                step=1,
                 key="initial_policies_input",
                 help=f"Starting volume for week of {SIM_START_DATE.strftime('%b %d, %Y')}"
             )
@@ -894,7 +894,7 @@ def main():
         with col2:
             weekly_change = st.number_input(
                 "Weekly Volume Change",
-                value=5,
+                value=1,
                 step=1,
                 key="weekly_change_input",
                 help="Incremental change per week (can be negative for decreasing volume)"
@@ -904,8 +904,8 @@ def main():
             ceiling = st.number_input(
                 "Policy Volume Ceiling",
                 min_value=0,
-                value=100,
-                step=10,
+                value=25,
+                step=1,
                 key="ceiling_input",
                 help="Maximum policies per week"
             )
