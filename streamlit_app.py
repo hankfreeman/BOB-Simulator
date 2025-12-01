@@ -843,8 +843,9 @@ def main():
         
         # File Upload Section
         st.subheader("📁 Data Upload")
+        st.info("Using default policy data (randompolicydata). To use different data, upload a CSV file below.")
         uploaded_file = st.file_uploader(
-            "Upload your gtlpolicies.csv file", 
+            "Upload your gtlpolicies.csv file (optional - leave empty to use default data)", 
             type="csv",
             help="Requires 'policy_nbr', 'plan_code', 'annual_premium', 'Issue Date', 'paid_to_date', 'Term Date', and 'app_recvd_date'."
         )
@@ -1004,10 +1005,16 @@ def main():
             ceiling = st.session_state.ceiling
             volume_randomness = st.session_state.volume_randomness
             
+            # If no file is uploaded, use the default randompolicydata file
             if uploaded_file is None:
-                st.error("Please upload a CSV file in the Configuration tab before running the simulation.")
-                st.session_state.simulation_run = False
-                return
+                import os
+                default_file_path = os.path.join(os.path.dirname(__file__), 'randompolicydata')
+                if os.path.exists(default_file_path):
+                    uploaded_file = open(default_file_path, 'rb')
+                else:
+                    st.error("Please upload a CSV file in the Configuration tab before running the simulation.")
+                    st.session_state.simulation_run = False
+                    return
 
             # Clear the warning flag for each new simulation
             if hasattr(simulate_lapse_month, '_warning_shown'):
