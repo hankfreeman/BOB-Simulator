@@ -1179,27 +1179,6 @@ def main():
                 
                 st.plotly_chart(fig_cash, use_container_width=True)
                 
-                # --- Chart 3: Survival Curves ---
-                st.subheader("3. 12-Month Policy Survival by Weekly Cohort")
-                
-                if not survival_df_melted.empty:
-                    fig = px.line(
-                        survival_df_melted, 
-                        x="MonthNumber", 
-                        y="SurvivalRate", 
-                        color="IssueWeekStr", 
-                        line_group="IssueWeekStr",
-                        hover_name="IssueWeekStr",
-                        title="Survival Rate over 12 Months for Weekly Cohorts (Based on Average PaidmX)",
-                        labels={'MonthNumber': 'Policy Month (M1 to M12)', 'SurvivalRate': 'Survival Rate (Cumulative)', 'IssueWeekStr': 'Issue Week'},
-                        color_discrete_sequence=px.colors.qualitative.Plotly
-                    )
-                    fig.update_layout(showlegend=False)
-                    fig.update_yaxes(range=[0, 1])
-                    st.plotly_chart(fig, use_container_width=True)
-                    st.info("📊 This chart shows actual survival rates based on Bernoulli trial simulations. Each policy's PaidmX indicators were determined through month-by-month conditional lapse probability trials, ensuring statistically accurate representation of the survival curves.")
-                else:
-                    st.warning("No policies generated to display survival curves.")
                 
                 # --- Chart 4: Volume by Underwriting Class ---
                 st.subheader("4. Weekly Policy Volume by Underwriting Class")
