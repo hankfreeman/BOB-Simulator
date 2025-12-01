@@ -1,4 +1,4 @@
-# Insurance Book of Business Lapse Modeler
+# 📖📈 Insurance Book of Business Lapse Modeler
 
 A Streamlit app using randomized policy data to model how lapse behavior affects an insurance company's cash flows over a multiyear upscale in sales volume.
 
