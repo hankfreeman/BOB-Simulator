@@ -1,4 +1,4 @@
-# 🎈 Blank app template
+# Insurance Book of Business Lapse Modeler
 
 A simple Streamlit app template for you to modify!
 
