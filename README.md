@@ -2,7 +2,7 @@
 
 A Streamlit app using randomized policy data to model how lapse behavior affects an insurance company's cash flows over a multiyear upscale in sales volume.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-2s4j5z2zij4.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](bob-simulator-adpnnxgwxewwe8v5pomyzn.streamlit.app/)
 
 ### How to run it on your own machine
 
